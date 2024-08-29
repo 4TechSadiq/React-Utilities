@@ -1,5 +1,5 @@
 ## react 
-Applying style in react page
+# Applying style in react page
 
 - inline css
   <h3 style={{marginLeft:100, color:"red"}}>Complete details</h3>
