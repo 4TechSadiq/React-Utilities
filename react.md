@@ -1,5 +1,13 @@
-## react 
-# Applying style in react page
+o# React 
+### Applying style in react page
+
+### React Hooks
+
+### Lifecycle of components
+- Mounting Phase(Putting component into DOM)
+- Updating Phase
+- Unmounting Phase
+- These combined phase is called lifecycle of component.
 
 - inline css
   <h3 style={{marginLeft:100, color:"red"}}>Complete details</h3>
@@ -23,3 +31,6 @@
   - give image tag to where you want to display image
   - info : in jsx, every tag should be closed by <tagname /> or <tagname></tagname> else error will be generated
   
+### React Hooks
+  - Introduced after react 16.
+  - 
