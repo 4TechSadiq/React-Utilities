@@ -1,4 +1,4 @@
-react 
+## react 
 Applying style in react page
 
 - inline css
