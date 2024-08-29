@@ -1,1 +1,5 @@
 react 
+
+
+- inline css
+  <h3 style={{marginLeft:100, color:"red"}}>Complete details</h3>
