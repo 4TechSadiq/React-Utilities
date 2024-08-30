@@ -55,6 +55,7 @@ o# React
     <button onClick={handleClick}>add state</button>
     
   - Syntax useSate in class
+    ```js
     class stateClass extends React.Component{
     constructor(){
         super();
@@ -72,4 +73,4 @@ o# React
             </>
         )
     }
-}
+    }
