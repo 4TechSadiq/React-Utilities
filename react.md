@@ -50,11 +50,11 @@ o# React
     )
 
   - Syntax by using class
-   - ```js
-    function handleClick(){
-    seState(state+1);
+    ```js
+      function handleClick(){
+      seState(state+1);
     }
-    <button onClick={handleClick}>add state</button>
+        <button onClick={handleClick}>add state</button>
     
   - Syntax useSate in class
     ```js
