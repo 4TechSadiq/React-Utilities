@@ -38,6 +38,7 @@ o# React
   - Example, when clicking a button , value will increment, when button click color change etc
   - it can be used to change a state of a component from one state to another
   - Suntax useState in function
+  - ```js
     const [state, setState] = useState(0)
 
     return (
@@ -48,7 +49,8 @@ o# React
       </>
     )
 
-    or
+  or
+   - ```js
     function handleClick(){
     seState(state+1);
     }
