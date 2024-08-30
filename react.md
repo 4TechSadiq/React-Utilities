@@ -55,7 +55,7 @@ o# React
     <button onClick={handleClick}>add state</button>
     
   - Syntax useSate in class
-  - class stateClass extends React.Component{
+    class stateClass extends React.Component{
     constructor(){
         super();
         this.state = {count:23}
