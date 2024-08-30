@@ -33,4 +33,14 @@ o# React
   
 ### React Hooks
   - Introduced after react 16.
-  - 
+#### UseState() Hook
+  - it is used to change the state of a component
+  - ##### syntax /n const [state, setState] = useState(0)
+
+    return (
+      <>
+      <h2>Usestate</h2>
+      <h2>current state: {state}</h2>
+      <button onClick={()=>{setState(state+1)}}>add state</button>
+      </>
+    )
