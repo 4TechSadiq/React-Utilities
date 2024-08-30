@@ -79,4 +79,62 @@ o# React
 
 #### Multiple useState
 - Multiple useState in function
+- ```js
+  export default function TwoState(){
+    const [color,setColor]=useState("grey")
+    const [color1, setColor1]=useState("green")
+
+    return(
+        <>
+        <h2>Two Usestate</h2>
+        <div style={{ width: "30%", height: 200, border:"1px solid black", background: color}}>
+            <p style={{marginTop:"15%", marginLeft:"40%"}}>First Div</p>
+        </div>
+        <button onClick={()=>{setColor("red")}}>color change</button>
+
+
+        <div style={{ width: "30%", height: 200, border:"1px solid black", background:color1}}>
+            <p style={{marginTop:"15%", marginLeft:"40%"}}>second Div</p>
+        </div>
+        <button onClick={()=>{setColor1("blue")}}>color change</button>
+        <button onClick={()=>{setColor("grey"); setColor1("grey")}}>reset</button>
+        </>
+    )
+  }
+
 - Multiple useState in class
+- ```js
+  class TwoState extends React.Component{
+    constructor(){
+        super();
+        this.state = ({
+            color: "grey",
+            color1: "blue"
+        })
+    }
+    changeColor = () => {
+        this.setState({
+            color:"red",
+            color1:"yellow"
+        }
+        ) 
+    }
+    render(){
+        return(
+            <>
+         <h2>Two Usestate</h2>
+        <div style={{ width: "30%", height: 200, border:"1px solid black", background: this.state.color}}>
+            <p style={{marginTop:"15%", marginLeft:"40%"}}>First Div</p>
+        </div>
+        <button onClick={this.changeColor}>color change</button>
+        <div style={{ width: "30%", height: 200, border:"1px solid black", background:this.state.color1}}>
+            <p style={{marginTop:"15%", marginLeft:"40%"}}>second Div</p>
+        </div>
+        <button onClick={this.changeColor}>color change</button>
+        <button onClick>reset</button>
+        </>
+        )
+    }
+  }
+  
+  export default TwoState
