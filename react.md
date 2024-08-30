@@ -1,4 +1,4 @@
-o# React 
+# React 
 ### Applying style in react page
 
 ### React Hooks
