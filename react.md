@@ -142,3 +142,33 @@
 #### use state with object
 - it is difficult to write more div. Thats where the state comes in.
 - Eg for changing color of multiple div
+- syntax
+- ```js
+  import React, { useState } from "react";
+
+export default function StateObject(){
+    const [color, setColor] = useState({
+        div_1_color: "grey",
+        div_2_color: "yellow"
+    })
+
+    function handlecolor(){
+        setColor({...color, div_1_color:"red",div_2_color:"blue"})
+    }
+    return(
+        <>
+            <h2>Two Usestate</h2>
+            <div style={{ width: "30%", height: 200, border:"1px solid black", background: color.div_1_color}}>
+                <p style={{marginTop:"15%", marginLeft:"40%"}}>First Div</p>
+            </div>
+            <button onClick={handlecolor}>color change</button>
+
+
+            <div style={{ width: "30%", height: 200, border:"1px solid black", background: color.div_2_color}}>
+                <p style={{marginTop:"15%", marginLeft:"40%"}}>second Div</p>
+            </div>
+            <button onClick={handlecolor}>color change</button>
+            <button>reset</button>
+        </>
+    )
+    }
