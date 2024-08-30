@@ -76,3 +76,7 @@ o# React
         )
     }
     }
+
+#### Multiple useState
+- Multiple useState in function
+- Multiple useState in class
