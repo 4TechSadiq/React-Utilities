@@ -138,3 +138,7 @@
   }
   
   export default TwoState
+
+#### use state with object
+- it is difficult to write more div. Thats where the state comes in.
+- Eg for changing color of multiple div
