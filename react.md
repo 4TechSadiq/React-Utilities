@@ -49,7 +49,7 @@ o# React
       </>
     )
 
-  or
+  - Syntax by using class
    - ```js
     function handleClick(){
     seState(state+1);
