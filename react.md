@@ -37,7 +37,7 @@ o# React
   - it is used to change the state of a component
   - Example, when clicking a button , value will increment, when button click color change etc
   - it can be used to change a state of a component from one state to another
-  - Suntax
+  - Suntax useState in function
     const [state, setState] = useState(0)
 
     return (
@@ -54,5 +54,22 @@ o# React
     }
     <button onClick={handleClick}>add state</button>
     
-    
-    
+  - Syntax useSate in class
+  - class stateClass extends React.Component{
+    constructor(){
+        super();
+        this.state = {count:23}
+    }
+    increment = ()=>{
+        this.setState({count:this.state.count+1})
+    }
+    render(){
+        return(
+            <>
+                <h2>State changing using class component</h2>
+                <h3>Counter: {this.state.count}</h3>
+                <button onClick={this.increment}>Increment</button>
+            </>
+        )
+    }
+}
