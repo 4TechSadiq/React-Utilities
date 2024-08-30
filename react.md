@@ -35,7 +35,8 @@ o# React
   - Introduced after react 16.
 #### UseState() Hook
   - it is used to change the state of a component
-  - ##### syntax /n const [state, setState] = useState(0)
+  - Suntax
+    const [state, setState] = useState(0)
 
     return (
       <>
@@ -44,3 +45,12 @@ o# React
       <button onClick={()=>{setState(state+1)}}>add state</button>
       </>
     )
+
+    or
+    function handleClick(){
+    seState(state+1);
+    }
+    <button onClick={handleClick}>add state</button>
+    
+    
+    
