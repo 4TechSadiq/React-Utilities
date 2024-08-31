@@ -293,3 +293,31 @@
           </>
       )
      }
+
+
+## Forms in react
+- eg
+- ```js
+    import React, { useState } from 'react'
+  
+  export default function Register() {
+  
+      const [name,setValue] = useState("")
+      console.log("Name",name)
+  
+      const handleSubmit = (e) => {
+          e.preventDefault()
+          console.log("submited")
+      }
+    return (
+      <>
+      <div>Register Form</div>
+      <form onSubmit={handleSubmit}>
+          <label>First name</label>
+          <input type='text' onChange={(e)=>{setValue(e.target.value)}}></input> {/*  // to detect change and act accordingly */}
+          <button type='submit'>submit</button>
+      </form>
+      <p>Name: {name}</p>
+      </>
+    )
+  }
