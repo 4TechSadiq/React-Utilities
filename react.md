@@ -33,7 +33,7 @@
   
 ### React Hooks
   - Introduced after react 16.
-#### UseState() Hook
+## UseState() Hook
   - it is used to change the state of a component
   - Example, when clicking a button , value will increment, when button click color change etc
   - it can be used to change a state of a component from one state to another
@@ -228,3 +228,6 @@
         </>
     )
   }
+
+
+## UseEffect Hook
