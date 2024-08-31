@@ -146,11 +146,11 @@
 - ```js
   import React, { useState } from "react";
 
-export default function StateObject(){
-    const [color, setColor] = useState({
-        div_1_color: "grey",
-        div_2_color: "yellow"
-    })
+  export default function StateObject(){
+      const [color, setColor] = useState({
+          div_1_color: "grey",
+          div_2_color: "yellow"
+      })
 
     function handlecolor(){
         setColor({...color, div_1_color:"red",div_2_color:"blue"})
@@ -169,6 +169,36 @@ export default function StateObject(){
             </div>
             <button onClick={handlecolor}>color change</button>
             <button>reset</button>
+        </>
+    )
+    }
+#### update object state
+- ```js
+  import React, { useState } from "react";
+
+  
+  export default function Object_Update(){
+      const [value, setValue] = useState({
+          name:"nikil",
+          age: "23",
+          dept: "science"
+      })
+      console.log(value);
+
+    function handleUpdate(){
+        setValue({
+            ...value, //this is to divide items from array one by one. Changes will not apply to others.
+            name:"shibi",
+            
+        })
+    }
+    return(
+        <>
+            <h2>Student Details</h2>
+                <p>name: {value.name}</p>
+                <p>age: {value.age}</p>
+                <p>dept: {value.dept}</p>
+                <button onClick={handleUpdate}>update</button> 
         </>
     )
     }
