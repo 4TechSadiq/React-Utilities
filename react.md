@@ -231,3 +231,5 @@
 
 
 ## UseEffect Hook
+- it is used to handle sideeffect
+- eg during updation, manipulation, during umounting ...etc
