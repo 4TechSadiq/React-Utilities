@@ -252,3 +252,27 @@
         </>
     )
   }
+#### different useEffect
+- 1) ```js
+     export default function UseEffect_Fun(){
+      const [value, setValue] = useState(0)
+  
+      useEffect(()=>{
+          limit_count()
+          console.log("value changed or incremented")
+      })
+  
+      function limit_count(){
+          if(value>10){
+              setValue(1)
+          }
+      }
+  
+      return(
+          <>
+              <h2>use effect in function component</h2>
+              <p>Count: {value}</p>
+              <button onClick={()=>{setValue(value+1)}}>Increment</button>
+          </>
+      )
+  }
