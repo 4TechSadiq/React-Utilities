@@ -202,3 +202,29 @@
         </>
     )
     }
+#### updating array elemets using useState
+- ```js
+  import React, { useState } from "react";
+  
+  export default function ArrayList(){
+      const [lists, setLists] = useState(["apple", "orange","banana"])
+
+    function updateButton(){
+        const arr = ["grape", "lemon", "nuts"]
+        setLists(arr)
+    }
+    return(
+        <>
+        <h2>Array list</h2>
+        <h3>List of fruits</h3>
+        <ul>
+            {lists.map(
+                (e,index)=>(
+                    <li key={index}>{e}</li>
+                )
+            )}
+        </ul>
+        <button onClick={updateButton}>Update elemets</button>
+        </>
+    )
+  }
