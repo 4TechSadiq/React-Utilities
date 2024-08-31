@@ -275,4 +275,21 @@
               <button onClick={()=>{setValue(value+1)}}>Increment</button>
           </>
       )
-  }
+     }
+- 2) increment values on time interval
+     ```js
+     export default function Timer(){
+      const [value,setValue] = useState(0)
+  
+      useEffect(()=>{
+          setTimeout(()=>{
+              setValue(value+1)
+          },1000);
+      })
+      return(
+          <>
+              <h2>Timer using useEffect</h2>
+              <h3>Count: {value}</h3>
+          </>
+      )
+     }
