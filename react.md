@@ -233,3 +233,22 @@
 ## UseEffect Hook
 - it is used to handle sideeffect
 - eg during updation, manipulation, during umounting ...etc
+- runs on every render.
+- it works during render time.
+- eg
+- ```js
+  export default function UseEffect_Fun(){
+    const [value, setValue] = useState(0)
+
+    useEffect(()=>{
+        console.log("value changed or incremented")
+    })
+
+    return(
+        <>
+            <h2>use effect in function component</h2>
+            <p>Count: {value}</p>
+            <button onClick={()=>{setValue(value+1)}}>Increment</button>
+        </>
+    )
+  }
