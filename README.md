@@ -546,3 +546,11 @@ export default function Register() {
 #### text area in React
 - ```js
           <textarea rows="10" cols="20" name='address' value={formData.address} onChange={handleInput}></textarea>
+
+
+## React Router
+- It is a standard react library
+- It is a third party package
+- It is use for routing purposes in react like "route("/home") in flask for navigation.
+- Help to create single page application.
+- 
