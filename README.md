@@ -390,3 +390,45 @@ export default function Register() {
       )
     }
 
+#### Simplifying onChange Handler Code
+- It is also use to handle multiple form inputs
+- With every onChange we call a function
+- The function will detect onChange and will act accordingly
+- ```js
+  import React, { useState } from 'react'
+    
+    export default function Register() {
+
+    const [formData,setFormData] = useState({})
+
+    const handleInput = (e) =>{
+        const {name,value} = e.target;
+        setFormData({
+            ...formData,
+            [name] : value, 
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log("submited: ", formData)
+    }
+
+      return (
+        <>
+        <div>Register Form</div>
+        <form onSubmit={handleSubmit}>
+            <label>First name</label>
+            <input type='text' name='name' value={formData.name} onChange={handleInput}></input><br></br> {/*  // to detect change and act accordingly */}
+            <label>Age</label>
+            <input type='number' name='age' value={formData.age} onChange={handleInput}></input><br></br>
+            <label>mail</label>
+            <input type='email' name='email' value={formData.email} onChange={handleInput}></input><br></br>
+            <button type='submit'>submit</button>
+        </form>
+        {/* <p>Name: {name}</p>
+        <p>age: {age}</p>
+        <p>mail:{mail}</p> */}
+        </>
+      )
+    }
