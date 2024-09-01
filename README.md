@@ -432,3 +432,53 @@ export default function Register() {
         </>
       )
     }
+
+#### Select Dropdown in react
+-  In select section we give
+-  ```js
+   <select name='language' value={formData.language} onChange={handleInput}>
+- ```js
+  import React, { useState } from 'react'
+
+  export default function Register() {
+    
+    const [formData,setFormData] = useState({})
+
+    const handleInput = (e) =>{
+        const {name,value} = e.target;
+        setFormData({
+            ...formData,
+            [name] : value, 
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log("submited: ", formData)
+    }
+
+      return (
+        <>
+        <div>Register Form</div>
+        <form onSubmit={handleSubmit}>
+            <label>First name</label>
+            <input type='text' name='name' value={formData.name} onChange={handleInput}></input><br></br> {/*  // to detect change and act accordingly */}
+            <label>Age</label>
+            <input type='number' name='age' value={formData.age} onChange={handleInput}></input><br></br>
+            <label>mail</label>
+            <input type='email' name='email' value={formData.email} onChange={handleInput}></input><br></br>
+            <label>Select Language</label>
+            <select name='language' value={formData.language} onChange={handleInput}>
+                <option value={"malayalam"}>malayalam</option>
+                <option value={"english"}>english</option>
+                <option value={"hindi"}>Hindi</option>
+            </select>
+            <br></br>
+            <button type='submit'>submit</button>
+        </form>
+        {/* <p>Name: {name}</p>
+        <p>age: {age}</p>
+        <p>mail:{mail}</p> */}
+        </>
+      )
+    }
