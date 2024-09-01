@@ -610,7 +610,20 @@ export default function Register() {
   }
 
 #### Router - Passing Parameter with link
-- provide :id with Route tag
+- provide :id with Route tag in App.js
   ```js
    <Route path="profile/:id" element={<Profile/>}></Route>
+- Provide ID with the link
+  ```js
+  <li><Link to='profile/2'>emp 2</Link></li>
+- Using useParams() get the parameter(id) and assign
+  ```js
+  export default function Profile() {
+    const {id} = useParams()
+  return (
+    <>
+    <h2>Profile of employe : {id}</h2>
+    </>
+  )
+  }
 
