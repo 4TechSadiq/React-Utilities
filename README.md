@@ -608,3 +608,9 @@ export default function Register() {
       </>
     )
   }
+
+#### Router - Passing Parameter with link
+- provide :id with Route tag
+  ```js
+   <Route path="profile/:id" element={<Profile/>}></Route>
+
