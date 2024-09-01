@@ -358,3 +358,35 @@ export default function Register() {
       </>
     )
     }
+
+#### handling multiple form input using single usestate
+- ```js
+  import React, { useState } from 'react'
+
+  export default function Register() {
+
+    const [formData,setFormData] = useState({})
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log("submited: ", formData)
+    }
+      return (
+        <>
+        <div>Register Form</div>
+        <form onSubmit={handleSubmit}>
+            <label>First name</label>
+            <input type='text' onChange={(e)=>{setFormData((prev)=>{return{...prev,name:e.target.value}})}}></input><br></br> {/*  // to detect change and act accordingly */}
+            <label>Age</label>
+            <input type='number' onChange={(e)=>{setFormData((prev)=>{return{...prev,age:e.target.value}})}}></input><br></br>
+            <label>mail</label>
+            <input type='email' onChange={(e)=>{setFormData((prev)=>{return{...prev,email:e.target.value}})}}></input><br></br>
+            <button type='submit'>submit</button>
+        </form>
+        {/* <p>Name: {name}</p>
+        <p>age: {age}</p>
+        <p>mail:{mail}</p> */}
+        </>
+      )
+    }
+
