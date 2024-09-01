@@ -296,6 +296,7 @@
 
 
 ## Forms in react
+- To handle form submit, onSubmit on button is used.
 - eg
 - ```js
     import React, { useState } from 'react'
