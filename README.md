@@ -587,3 +587,24 @@ export default function Register() {
   
   export default App;
 
+#### Router Link
+- routing when button clicked or link clicked
+-  Router Link concept is used
+-  in react app browser will not mostly refresh
+-  that is whre react link is used
+-  <Link></Link> tag is used instead of <a></a> tag and to="" is used instead of href=""
+- ```js
+  import React from 'react'
+  import { Link } from 'react-router-dom'
+
+  export default function Home() {
+    return (
+      <>
+          <h1>Home page</h1>
+          <ul>
+            <li><Link to='about/'>about</Link></li>
+            <li><Link to='contact/'>contact</Link></li>
+          </ul>
+      </>
+    )
+  }
