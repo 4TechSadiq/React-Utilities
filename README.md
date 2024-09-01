@@ -482,3 +482,11 @@ export default function Register() {
         </>
       )
     }
+
+#### select initial value form value
+- we pass inital values with usestate
+- ```js
+  const [formData,setFormData] = useState({
+        number:"+91",
+        email: "@gmail.com"
+    })
