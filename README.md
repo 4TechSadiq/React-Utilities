@@ -555,6 +555,35 @@ export default function Register() {
 - Help to create single page application.
   
 #### Component Creation for router
-##### Download router package
+- ##### Download router package
 - ```bash
   npm install react-router-dom
+- ```js
+  import React from "react";
+  import Home from "./component/home";
+  import About from "./component/about";
+  import Contact from "./component/contact";
+  // browseRouter
+  //Routes
+  //Route
+  import { BrowserRouter, Route, Routes } from "react-router-dom";
+  
+  function App() {
+    return (
+      <div className="App">
+        {/* <Home/>
+        <About/>
+        <Contact/> */}
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="about" element={<About/>}></Route>
+            <Route path="contact" element={<Contact/>}></Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    );
+  }
+  
+  export default App;
+
