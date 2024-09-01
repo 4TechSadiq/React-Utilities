@@ -322,3 +322,39 @@
       </>
     )
   }
+
+#### Multiple input value submission
+- to handle multiple value, just create multiple useStates
+- eg
+- ```js
+  import React, { useState } from 'react'
+
+export default function Register() {
+
+    const [name,setValue] = useState("")
+    console.log("Name",name)
+    const [age, setAge] = useState("")
+    const [mail, setMail] = useState("")
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log("submited")
+    }
+    return (
+      <>
+      <div>Register Form</div>
+      <form onSubmit={handleSubmit}>
+          <label>First name</label>
+          <input type='text' onChange={(e)=>{setValue(e.target.value)}}></input><br></br> {/*  // to detect change and act accordingly */}
+          <label>Age</label>
+          <input type='number' onChange={(e)=>{setAge(e.target.value)}}></input><br></br>
+          <label>mail</label>
+          <input type='email' onChange={(e)=>{setMail(e.target.value)}}></input><br></br>
+          <button type='submit'>submit</button>
+      </form>
+      <p>Name: {name}</p>
+      <p>age: {age}</p>
+      <p>mail:{mail}</p>
+      </>
+    )
+    }
