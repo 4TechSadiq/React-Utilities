@@ -543,3 +543,6 @@ export default function Register() {
       )
     }
     
+#### text area in React
+- ```js
+          <textarea rows="10" cols="20" name='address' value={formData.address} onChange={handleInput}></textarea>
