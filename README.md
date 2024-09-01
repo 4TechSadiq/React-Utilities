@@ -554,3 +554,7 @@ export default function Register() {
 - It is use for routing purposes in react like "route("/home") in flask for navigation.
 - Help to create single page application.
   
+#### Component Creation for router
+##### Download router package
+- ```bash
+  npm install react-router-dom
