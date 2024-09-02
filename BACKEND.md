@@ -15,3 +15,4 @@
 ## Connecting React.js with bakend API
 
 ### Connecting with Django Rest
+- Documentation at django-cores
