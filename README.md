@@ -636,3 +636,32 @@ export default function Register() {
     <Route index={true} element={<Parent/>}></Route>
     <Route path="child/" element={<Child/>}></Route>
   </Route>
+
+#### Router Navigate
+- redirect like in django
+- here in react we use navigate.
+- useNavigate Hook is used.
+- ```js
+  import React from 'react'
+  import { Link, useNavigate } from 'react-router-dom'
+  
+  export default function Home() {
+    const navigate = useNavigate()
+    const handleNavigate = () =>{
+      navigate("/contact")
+    }
+  
+    return (
+      <>
+          <h1>Home page</h1>
+          <ul>
+            <li><Link to='about/'>about</Link></li>
+            {/* <li><Link to='contact/'>contact</Link></li> */}
+            <li><Link to='profile/1'>emp 1</Link></li>
+            <li><Link to='profile/2'>emp 2</Link></li>
+            <li><Link to="parent/child">child</Link></li>
+          </ul>
+          <button onClick={handleNavigate}>Navigate contact</button>
+      </>
+    )
+  }
