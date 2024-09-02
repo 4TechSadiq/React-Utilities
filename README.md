@@ -665,3 +665,7 @@ export default function Register() {
       </>
     )
   }
+
+### Bootstrap in react
+- add cdn link in index.html
+- use import to in app.js if you use downloaded bootstrap
