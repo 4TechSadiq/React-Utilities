@@ -627,3 +627,12 @@ export default function Register() {
   )
   }
 
+#### Nested Router
+- Nested route are given inside another routes
+- eg
+- Let parent is parent component and child is child component
+- ```js
+  <Route path="parent/">
+    <Route index={true} element={<Parent/>}></Route>
+    <Route path="child/" element={<Child/>}></Route>
+  </Route>
