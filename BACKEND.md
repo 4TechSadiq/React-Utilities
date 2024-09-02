@@ -11,3 +11,7 @@
 - POST: To create new record
 - PUT: To update
 - DELETE: To delete
+
+## Connecting React.js with bakend API
+
+### Connecting with Django Rest
