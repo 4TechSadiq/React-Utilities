@@ -98,3 +98,123 @@ function Register() {
 
 export default Register
 ```
+
+## Routing through pages. If admin exists then login to admin dashboard
+### Login page
+
+
+```js
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+function Login() {
+
+    const [formData,setFormData] = useState({})
+    const navigate = useNavigate()
+    console.log(formData)
+    const handleInput = (e)=>{
+        const{name,value} = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        })
+    }
+
+    const handleSubmit = async(e)=>{
+        e.preventDefault();
+        
+        try{
+            const response = await fetch("http://127.0.0.1:8000/user_login/",{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
+            })
+            console.log(response.ok)
+            if(response.ok){
+                toast.success("Login Succesfull: "+formData.username,{
+                    position: toast.POSITION.TOP_CENTER,
+                    theme: "colored"
+                })
+                navigate("/dash")
+
+            }else{
+                toast.error("Invalid credentials: "+formData.username,{
+                    position: toast.POSITION.TOP_CENTER,
+                    theme: "colored"
+                })
+            }
+
+        }catch(error){
+    
+        }
+    }
+
+    
+
+
+
+
+  return (
+    <>
+    <h2 className='text-center'>Login Here</h2>
+    <div className='container shadow rounded p-4'>
+    <form onSubmit={handleSubmit}>
+    <div className="mb-3">
+        <label for="exampleInputPassword1" className="form-label">Username</label>
+        <input type="text" name='username' className="form-control"  onChange={handleInput}></input>
+    </div>
+    <div className="mb-3">
+        <label for="exampleInputPassword1" className="form-label">Password</label>
+        <input type="password" name='password' className="form-control"  onChange={handleInput}></input>
+    </div>
+    <button type="reset" className="btn btn-danger">reset</button>
+    <button type="submit" className="btn btn-primary">Submit</button>
+    <p className='text-center'>Dont Have an account<Link to="/register">Register here</Link></p>
+    </form>
+    </div>
+    </>
+  )
+}
+
+export default Login
+```
+
+### App.js
+```js
+import React from "react";
+import Crud from "./components/Crud";
+import Create from "./components/Create";
+import Home from "./Home";
+import Create_Image from "./components/Create_Image";
+import Register from "./components/Credentials/Register";
+import Login from "./components/Credentials/Login";
+import { BrowserRouter,Routes, Route} from "react-router-dom"
+
+function App() {
+  return (
+      <>
+      {/* <h3 className='text-center'>CRUD OPERATIONS</h3> */}
+      {/* <Crud/>
+       <Create/>
+      <Create_Image/>
+      <Register/>
+      <Login/> */}
+
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Login/>}></Route>
+          <Route path="register/" element={<Register/>}></Route>
+          <Route path="dash/" element={<Crud/>}></Route>
+          <Route path="create/" element={<Create/>}></Route>
+        </Routes>
+      </BrowserRouter>
+      </>
+
+  );
+}
+
+export default App;
+```
